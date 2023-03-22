@@ -1,0 +1,15 @@
+@forward 'globals';
+
+h1 {
+    font-size: 2rem;
+    padding-top: .5em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.App {
+    width: 100%;
+    max-width: 1024px;
+    margin-inline: auto;
+    padding: 1em;
+}
