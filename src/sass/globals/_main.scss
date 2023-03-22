@@ -1,26 +1,5 @@
 main {
-    display: flex;
-    gap: 1rem;
     margin-top: 3em;
-
-    aside {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
-        padding-top: 1em;
-        padding-left: .5em;
-
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            left: 0;
-            border-left: 1px solid black;
-            width: 1px;
-            height: 100%;
-        }
-    }
 
     section:not(:last-of-type) {
         margin-bottom: 3em;
@@ -35,11 +14,12 @@ main {
 
     .section-guide {
         background-color: #E6E6E6;
+        color: black;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-        gap: 3rem;
+        gap: 4rem;
         justify-content: center;
-        padding: 2em;
+        padding: 3em;
 
         h3 {
             margin-bottom: .4em;
@@ -54,14 +34,15 @@ main {
                 color: white;
             }
 
-            .images-container {
+            .images-container,
+            .videos-container {
                 display: flex;
                 flex-wrap: wrap;
                 gap: .5rem;
 
                 & > * {
                     width: 10rem;
-                    height: 6rem;
+                    height: 10rem;
                     flex-grow: 1;
                     border-radius: 10px;
                     overflow: hidden;

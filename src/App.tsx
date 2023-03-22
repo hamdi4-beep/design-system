@@ -13,7 +13,7 @@ function App() {
   }, [bg])
 
   return (
-    <div className="App">
+    <div className={bg ? 'App layer' : 'App'}>
       <h1>Design System</h1>
       <Header />
 
