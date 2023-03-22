@@ -14,7 +14,7 @@ main {
 
     .section-guide {
         background-color: #E6E6E6;
-        color: black;
+        color: #000;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         gap: 4rem;
@@ -32,6 +32,10 @@ main {
             button {
                 background-color: #777;
                 color: white;
+            }
+
+            input {
+                width: 100%;
             }
 
             .images-container,

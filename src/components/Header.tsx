@@ -1,7 +1,7 @@
 import { BsFillGearFill } from 'react-icons/bs'
 function Header() {
     return (
-        <header>
+        <header className='space-between'>
             <div className="user">
                 <div className="user-img">
                     <img src='./assets/user.jpg' alt='' />

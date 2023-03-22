@@ -11,7 +11,9 @@ function Section({
         <section>
             <div className="section-header">
                 <h2>{title}</h2>
-                <button className='cta-btn'>Create Component</button>
+                {title === 'Assets Guide' ? (
+                    <input type='text' placeholder='Search URL...' style={{borderRadius:'50px'}} />
+                ) : (<button className='cta-btn'>Create Component</button>)}
             </div>
 
             {children}
