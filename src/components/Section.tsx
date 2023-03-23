@@ -1,14 +1,19 @@
 import * as React from 'react'
 import { StateContext } from '../context/StateContext'
 
+type Props = {
+    title: string
+    children: JSX.Element
+}
+
 function Section({
     title,
     children
-}: {
-    title: string
-    children: JSX.Element
-}) {
+}: Props) {
     const { setBg } = React.useContext(StateContext)
+    const { type } = children
+
+    let ctaElement: JSX.Element
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({ target }) => {
         const input = target as HTMLInputElement
@@ -16,13 +21,28 @@ function Section({
         input.value = ''
     }
 
+    switch (type.name) {
+        case 'StylesGuide':
+            ctaElement = <button className='cta-btn'>Add Element</button>
+            break
+
+        case 'AssetsGuide':
+            ctaElement = <input type='text' placeholder='Search URL...' onChange={handleChange} style={{borderRadius:'50px'}} />
+            break
+
+        case 'ComponentsGuide':
+            ctaElement = <button className="cta-btn">Create Component</button>
+            break
+
+        default:
+            throw Error('Unrecognized type!')
+    }
+
     return (
         <section>
             <div className="section-header space-between">
                 <h2>{title}</h2>
-                {title === 'Assets Guide' ? (
-                    <input type='text' placeholder='Search URL...' onChange={handleChange} style={{borderRadius:'50px'}} />
-                ) : (<button className='cta-btn'>Create Component</button>)}
+                {ctaElement}
             </div>
 
             {children}

@@ -10,7 +10,7 @@ function Main() {
         'Components Guide'
     ]
 
-    const children = [
+    const components = [
         <StylesGuide />,
         <AssetsGuide />,
         <ComponentsGuide />
@@ -18,13 +18,11 @@ function Main() {
 
     return (
         <main>
-            <div className="content">
-                {titles.map((title, i) => (
-                    <Section title={title} key={i}>
-                        {children[i]}
-                    </Section>
-                ))}
-            </div>
+            {titles.map((title, i) => (
+                <Section title={title} key={i}>
+                    {components[i]}
+                </Section>
+            ))}
         </main>
     )
 }

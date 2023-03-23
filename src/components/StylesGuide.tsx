@@ -1,12 +1,14 @@
 import { BiEdit } from 'react-icons/bi'
 
 function StylesGuide() {
+    const iconSize = '1.2rem'
+
     return (
         <div className="section-guide">
             <div className="buttons-section">
                 <div className="space-between">
                     <h3>Button Style</h3>
-                    <BiEdit />
+                    <BiEdit fontSize={iconSize} />
                 </div>
                 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum libero voluptas ea ipsam. Dolor nulla, eum corporis voluptate quae nihil.</p>
@@ -19,7 +21,7 @@ function StylesGuide() {
             <div className="input-section">
                 <div className="space-between">
                     <h3>Input Style</h3>
-                    <BiEdit />
+                    <BiEdit fontSize={iconSize}/>
                 </div>
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae sapiente explicabo rerum omnis magni quam! Odio voluptates molestiae qui?</p>
@@ -32,7 +34,7 @@ function StylesGuide() {
             <div className="checkbox-section">
                 <div className="space-between">
                     <h3>Checkbox Style</h3>
-                    <BiEdit />
+                    <BiEdit fontSize={iconSize} />
                 </div>
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, quaerat natus? Est asperiores quibusdam fugit assumenda nemo neque ex voluptatibus!</p>
@@ -45,7 +47,7 @@ function StylesGuide() {
             <div className="select-section">
                 <div className="space-between">
                     <h3>Select Style</h3>
-                    <BiEdit />
+                    <BiEdit fontSize={iconSize} />
                 </div>
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quidem exercitationem natus quisquam recusandae reprehenderit architecto repellendus illo minus perspiciatis?</p>
