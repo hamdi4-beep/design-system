@@ -15,7 +15,7 @@ function Header() {
                         <h4>Hamdi Kamel</h4>
                 
                         <span>
-                            <strong style={{paddingRight: '.2em'}}>0</strong>
+                            <strong>0 </strong>
                             Notes
                         </span>
                     </div>

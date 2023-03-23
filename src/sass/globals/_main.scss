@@ -19,6 +19,32 @@ main {
         justify-content: center;
         padding: 3em;
 
+        & > * {
+            position: relative;
+
+            .note-layer {
+                position: absolute;
+                inset: 0;
+                background-color: white;
+                clip-path: circle(0% at top right);
+                transition: all 500ms ease;
+
+                .note-header {
+                    border-bottom: 1px solid #E6E6E6;
+                    padding: .5em;
+                    align-items: center;
+
+                    h3 {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .reveal {
+                clip-path: circle(100%);
+            }
+        }
+
         h3 {
             margin-bottom: .4em;
         }
