@@ -2,4 +2,9 @@ footer {
     background-color: white;
     color: #000;
     padding: 1em;
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
 }

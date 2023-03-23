@@ -1,8 +1,10 @@
 import { BiEdit } from 'react-icons/bi'
 
-function StylesGuide() {
-    const iconSize = '1.2rem'
-
+function StylesGuide({
+    iconSize
+}: {
+    iconSize: string
+}) {
     return (
         <div className="section-guide">
             <div className="buttons-section">
