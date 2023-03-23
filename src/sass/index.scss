@@ -8,11 +8,16 @@ h1 {
     text-align: center;
 }
 
-.App {
-    width: 100%;
+.App,
+.wrapper {
     max-width: $mx-w;
+    width: 100%;
     margin-inline: auto;
+}
+
+.App {
     padding: 1em;
+    padding-bottom: 2em;
 
     &.layer::after {
         content: '';
