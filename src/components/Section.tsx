@@ -18,7 +18,7 @@ function Section({
 
     return (
         <section>
-            <div className="section-header">
+            <div className="section-header space-between">
                 <h2>{title}</h2>
                 {title === 'Assets Guide' ? (
                     <input type='text' placeholder='Search URL...' onChange={handleChange} style={{borderRadius:'50px'}} />

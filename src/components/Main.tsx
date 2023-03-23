@@ -1,16 +1,19 @@
 import Section from "./Section"
 import StylesGuide from './StylesGuide'
 import AssetsGuide from "./AssetsGuide"
+import ComponentsGuide from "./ComponentsGuide"
 
 function Main() {
     const titles = [
         'Styles Guide',
-        'Assets Guide'
+        'Assets Guide',
+        'Components Guide'
     ]
 
     const children = [
         <StylesGuide />,
-        <AssetsGuide />
+        <AssetsGuide />,
+        <ComponentsGuide />
     ]
 
     return (

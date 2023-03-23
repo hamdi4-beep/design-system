@@ -6,8 +6,6 @@ main {
     }
 
     .section-header {
-        display: flex;
-        justify-content: space-between;
         align-items: flex-end;
         padding-block: .5em;
     }
@@ -50,6 +48,11 @@ main {
                     flex-grow: 1;
                     border-radius: 10px;
                     overflow: hidden;
+                }
+
+                .video-1,
+                .video-2 {
+                    height: calc(20rem + .5rem);
                 }
             }
         }
