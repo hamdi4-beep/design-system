@@ -1,0 +1,13 @@
+@use './variables' as *;
+
+footer {
+    background-color: white;
+    color: #000;
+    padding: 1em;
+
+    .wrapper {
+        width: $mx-w;
+        margin-inline: auto;
+        padding-left: 2em;
+    }
+}
