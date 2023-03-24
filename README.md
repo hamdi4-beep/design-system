@@ -1,7 +1,7 @@
-# design-system
+# Design System
 
 ## Project Overview
-Design System is a sideproject that where I can focus on creating and testing UI components in isolation before they're used in a real project.
+It's a customizeable personal playground where I can focus on creating UI components in isolation and keep them as a collection for future reference.
 
 ## Getting Started
 Here are the basic steps to run the project:
