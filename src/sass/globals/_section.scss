@@ -1,15 +1,14 @@
-main {
-    margin-top: 3em;
+section {
 
-    section:not(:last-of-type) {
+    &:not(:last-of-type) {
         margin-bottom: 3em;
     }
-
+    
     .section-header {
         align-items: flex-end;
         padding-block: .5em;
     }
-
+    
     .section-guide {
         background-color: #FFDEE9;
         background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
@@ -19,83 +18,55 @@ main {
         gap: 4rem;
         justify-content: center;
         padding: 3em;
-
+    
         & > * {
             position: relative;
-
+    
             .note-layer {
                 position: absolute;
                 inset: 0;
                 background-color: white;
                 clip-path: circle(0% at top right);
                 transition: all 500ms ease;
-
+    
                 .note-header {
                     border-bottom: 1px solid #E6E6E6;
                     padding: .5em;
                     align-items: center;
-
+    
                     h3 {
                         margin: 0;
                     }
                 }
             }
-
+    
             .reveal {
                 clip-path: circle(100%);
             }
         }
-
+    
         h3 {
             margin-bottom: .4em;
         }
-
+    
         p {
             line-height: 1.4;
         }
-
+    
         .section-content {
             text-align: center;
             margin-top: 2em;
 
-            .default {
-                background-color: #4158D0;
-                background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-                color: white;
-            }
-
-            .squares {
-                position: relative;
-
-                &::before,
-                &::after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    inset: 0;
-                    border: 1px solid black;
-                }
-
-                &::before {
-                    rotate: -5deg;
-                }
-
-                &::after {
-                    rotate: 5deg;
-                    border-color: white;
-                }
-            }
-
             input {
                 width: 100%;
             }
-
+    
             .images-container,
             .videos-container {
                 display: flex;
                 flex-wrap: wrap;
                 gap: .5rem;
-
+    
                 & > * {
                     width: 10rem;
                     height: 10rem;
@@ -103,7 +74,7 @@ main {
                     border-radius: 10px;
                     overflow: hidden;
                 }
-
+    
                 .video-1,
                 .video-2 {
                     height: calc(20rem + .5rem);
@@ -111,7 +82,7 @@ main {
             }
         }
     }
-
+    
     .cta-btn {
         background-color: black;
         color: white;
