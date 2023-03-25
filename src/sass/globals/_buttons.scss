@@ -6,22 +6,14 @@
 
 .squares {
     position: relative;
+    border: 1px solid black;
 
-    &::before,
     &::after {
         content: '';
         display: block;
         position: absolute;
         inset: 0;
-        border: 1px solid black;
-    }
-
-    &::before {
         rotate: -5deg;
-    }
-
-    &::after {
-        rotate: 5deg;
-        border-color: white;
+        border: 1px solid white;
     }
 }

@@ -38,9 +38,9 @@ function Header() {
 
                             <div className="colors-list">
                                 <div className="color one"></div>
-                                <div className="color one"></div>
-                                <div className="color one"></div>
-                                <div className="color one"></div>
+                                <div className="color two"></div>
+                                <div className="color three"></div>
+                                <div className="color four"></div>
                             </div>
                         </li>
                     </div>
