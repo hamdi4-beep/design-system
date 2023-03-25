@@ -35,7 +35,7 @@ function Section({
             break
 
         default:
-            throw Error('Unrecognized type!')
+            ctaElement = <></>
     }
 
     return (

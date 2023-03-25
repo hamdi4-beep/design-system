@@ -6,23 +6,19 @@ import ComponentsGuide from "./ComponentsGuide"
 function Main() {
     const iconSize = '1.2rem'
 
-    const titles = [
-        'Styles Guide',
-        'Assets Guide',
-        'Components Guide'
-    ]
+    const components = new Map([
+        ['Styles Guide', <StylesGuide iconSize={iconSize} />],
+        ['Assets Guide', <AssetsGuide iconSize={iconSize} />],
+        ['Components Guide', <ComponentsGuide />]
+    ])
 
-    const components = [
-        <StylesGuide iconSize={iconSize} />,
-        <AssetsGuide iconSize={iconSize} />,
-        <ComponentsGuide />
-    ]
+    const list = Array.from(components.entries())
 
     return (
         <main>
-            {titles.map((title, i) => (
+            {list.map(([title, component], i) => (
                 <Section title={title} key={i}>
-                    {components[i]}
+                    {component}
                 </Section>
             ))}
         </main>

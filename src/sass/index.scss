@@ -16,8 +16,7 @@ h1 {
 }
 
 .App {
-    padding: 1em;
-    padding-bottom: 2em;
+    padding: 1.5em;
 
     &.layer::after {
         content: '';
@@ -37,4 +36,10 @@ h1 {
 .space-between {
     display: flex;
     justify-content: space-between;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }

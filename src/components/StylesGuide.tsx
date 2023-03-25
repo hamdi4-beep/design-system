@@ -1,6 +1,6 @@
 import * as React from 'react'
 import NoteLayer from './subComponents/NoteLayer'
-import { BiEdit, BiCross } from 'react-icons/bi'
+import { BiEdit } from 'react-icons/bi'
 
 function StylesGuide({
     iconSize
@@ -24,8 +24,9 @@ function StylesGuide({
                 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum libero voluptas ea ipsam. Dolor nulla, eum corporis voluptate quae nihil.</p>
                 
-                <div className="section-content">
-                    <button>Default</button>
+                <div className="section-content flex-center">
+                    <button className='default'>Default</button>
+                    <button className="squares">Squares</button>
                 </div>
 
                 <NoteLayer ref={layerRef} />
@@ -37,7 +38,7 @@ function StylesGuide({
                     <BiEdit fontSize={iconSize} />
                 </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae sapiente explicabo rerum omnis magni quam! Odio voluptates molestiae qui?</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium neque veniam obcaecati suscipit inventore pariatur!</p>
                 
                 <div className="section-content">
                     <input type="text" placeholder='Aa'/>
@@ -50,7 +51,7 @@ function StylesGuide({
                     <BiEdit fontSize={iconSize} />
                 </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, quaerat natus? Est asperiores quibusdam fugit assumenda nemo neque ex voluptatibus!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt ipsam praesentium, distinctio excepturi itaque.</p>
                 
                 <div className="section-content">
                     <input type="checkbox" name="" id="" />
@@ -63,7 +64,7 @@ function StylesGuide({
                     <BiEdit fontSize={iconSize} />
                 </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quidem exercitationem natus quisquam recusandae reprehenderit architecto repellendus illo minus perspiciatis?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus magnam quam consequatur enim tenetur, officiis eum?</p>
                 
                 <div className="section-content">
                     <select name="" id="">
