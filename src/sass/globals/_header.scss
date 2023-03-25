@@ -9,6 +9,44 @@ header {
         text-align: center;
     }
 
+    ul {
+        list-style-type: none;
+        text-align: left;
+
+        svg {
+            display: block;
+            margin-left: auto;
+            margin-bottom: .5em;
+            text-align: right;
+        }
+
+        li {
+            padding: 1em;
+            background-color: white;
+        }
+
+        span {
+            font-weight: bold;
+            color: black;
+        }
+
+        .colors-list {
+            display: flex;
+            gap: .5rem;
+        }
+
+        .color {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            margin-top: .5em;
+        }
+
+        .one {
+            background-color: purple;
+        }
+    }
+
     .user {
         display: flex;
         gap: .5rem;

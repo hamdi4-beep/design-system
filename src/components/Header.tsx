@@ -1,6 +1,14 @@
+import * as React from 'react'
 import { BsFillGearFill } from 'react-icons/bs'
 
 function Header() {
+    const listRef = React.createRef<HTMLDivElement>()
+
+    const handleOpenClick: React.MouseEventHandler<SVGElement> = e => {
+        const { current } = listRef
+        current?.classList.toggle('hidden')
+    }
+
     return (
         <header>
             <h1>Design System</h1>
@@ -21,7 +29,22 @@ function Header() {
                     </div>
                 </div>
 
-                <BsFillGearFill style={{fontSize: '1.4rem'}} />
+                <ul className="menu-list">
+                    <BsFillGearFill onClick={handleOpenClick} style={{fontSize: '1.4rem'}} />
+
+                    <div className="items-list hidden" ref={listRef}>
+                        <li>
+                            <span>Change Theme</span>
+
+                            <div className="colors-list">
+                                <div className="color one"></div>
+                                <div className="color one"></div>
+                                <div className="color one"></div>
+                                <div className="color one"></div>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
             </div>
         </header>
     )
