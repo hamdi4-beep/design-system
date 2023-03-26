@@ -9,6 +9,15 @@ function Header() {
         current?.classList.toggle('hidden')
     }
 
+    const handleClick: React.MouseEventHandler<HTMLDivElement> = ({ target }) => {
+        if ((target as HTMLDivElement).classList.contains('color')) {
+            const color = target as HTMLDivElement
+            const [first, second] = getColor(color)
+
+            document.body.style.backgroundColor = second
+        }
+    }
+
     return (
         <header>
             <h1>Design System</h1>
@@ -36,7 +45,7 @@ function Header() {
                         <li>
                             <span>Change Theme</span>
 
-                            <div className="colors-list">
+                            <div className="colors-list" onClick={handleClick}>
                                 <div className="color one"></div>
                                 <div className="color two"></div>
                                 <div className="color three"></div>
@@ -48,6 +57,11 @@ function Header() {
             </div>
         </header>
     )
+}
+
+function getColor(elem: HTMLDivElement): RegExpMatchArray {
+    const prop = getComputedStyle(elem).getPropertyValue('background-image')
+    return prop.match(/rgb\([\d\s,]+\)/g)!
 }
 
 export default Header

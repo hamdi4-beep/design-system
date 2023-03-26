@@ -17,7 +17,7 @@ function App() {
     <React.Fragment>
       <div className={bg ? 'App layer' : 'App'}>
         <Header />
-
+        
         <StateContext.Provider value={{bg, setBg}}>
           <Main />
         </StateContext.Provider>

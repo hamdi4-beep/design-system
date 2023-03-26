@@ -3,16 +3,14 @@ import StylesGuide from './StylesGuide'
 import AssetsGuide from "./AssetsGuide"
 import ComponentsGuide from "./ComponentsGuide"
 
-function Main() {
-    const iconSize = '1.2rem'
+const iconSize = '1.2rem'
 
-    const components = new Map([
+function Main() {
+    const list = Array.from(new Map([
         ['Styles Guide', <StylesGuide iconSize={iconSize} />],
         ['Assets Guide', <AssetsGuide iconSize={iconSize} />],
         ['Components Guide', <ComponentsGuide />]
-    ])
-
-    const list = Array.from(components.entries())
+    ]))
 
     return (
         <main>
