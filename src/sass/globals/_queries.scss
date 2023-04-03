@@ -1,0 +1,33 @@
+@media (min-width: 768px) {
+
+    main {
+        position: relative;
+        padding-inline: 2em;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            inset: 0;
+            border-left: 1px solid #E6E6E6;
+            z-index: -1;
+        }
+
+        .line {
+            position: absolute;
+            left: 0;
+            background-color: black;
+            width: 1px;
+            height: 15rem;
+        }
+    }
+
+    footer {
+        padding-inline: 3em;
+
+        .wrapper {
+            padding-inline: 1.5em;
+        }
+    }
+
+}

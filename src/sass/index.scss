@@ -2,7 +2,6 @@
 
 $mx-w: 1024px;
 
-
 .App,
 .wrapper {
     max-width: $mx-w;
@@ -31,11 +30,31 @@ $mx-w: 1024px;
 
 .dark-mode {
     background-color: black;
+
+    footer {
+        background-color: #000;
+        color: #FFF;
+    }
     
     .App {
 
         & > * {
             color: white;
+        }
+
+        .cta-btn {
+            background-color: #FF0;
+            color: #000;
+        }
+
+        .section-guide {
+            background: none;
+            background-color: #111;
+            color: #FFF;
+        }
+
+        .note-layer {
+            color: #000;
         }
     }
 }

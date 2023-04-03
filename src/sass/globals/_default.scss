@@ -36,6 +36,11 @@ input {
     border: 1px solid #777
 }
 
+svg,
+button {
+    cursor: pointer;
+}
+
 picture,
 video,
 img {
