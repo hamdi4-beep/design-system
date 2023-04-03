@@ -7,6 +7,11 @@ section {
     .section-header {
         align-items: flex-end;
         padding-block: .5em;
+
+        h2 {
+            font-family: Nunito;
+            font-weight: 900;
+        }
     }
     
     .section-guide {
@@ -17,7 +22,7 @@ section {
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         gap: 4rem;
         justify-content: center;
-        padding: 3em;
+        padding: 2em;
     
         & > * {
             position: relative;

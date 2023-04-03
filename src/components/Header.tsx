@@ -9,13 +9,18 @@ function Header() {
         current?.classList.toggle('hidden')
     }
 
-    const handleClick: React.MouseEventHandler<HTMLDivElement> = ({ target }) => {
+    const handleColorClick: React.MouseEventHandler<HTMLDivElement> = ({ target }) => {
         if ((target as HTMLDivElement).classList.contains('color')) {
             const color = target as HTMLDivElement
             const [first, second] = getColor(color)
 
             document.body.style.backgroundColor = second
         }
+    }
+
+    const handleDarkModeClick: React.MouseEventHandler<HTMLSpanElement> = e => {
+        const body = document.body as HTMLElement
+        body.classList.toggle('dark-mode')
     }
 
     return (
@@ -45,12 +50,16 @@ function Header() {
                         <li>
                             <span>Change Theme</span>
 
-                            <div className="colors-list" onClick={handleClick}>
+                            <div className="colors-list" onClick={handleColorClick}>
                                 <div className="color one"></div>
                                 <div className="color two"></div>
                                 <div className="color three"></div>
                                 <div className="color four"></div>
                             </div>
+                        </li>
+
+                        <li>
+                            <span onClick={handleDarkModeClick}>Dark Mode</span>
                         </li>
                     </div>
                 </ul>

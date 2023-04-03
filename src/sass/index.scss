@@ -2,6 +2,7 @@
 
 $mx-w: 1024px;
 
+
 .App,
 .wrapper {
     max-width: $mx-w;
@@ -25,6 +26,17 @@ $mx-w: 1024px;
 
     &.layer {
         color: white;
+    }
+}
+
+.dark-mode {
+    background-color: black;
+    
+    .App {
+
+        & > * {
+            color: white;
+        }
     }
 }
 
