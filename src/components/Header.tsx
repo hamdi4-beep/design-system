@@ -9,11 +9,11 @@ function Header() {
         current?.classList.toggle('hidden')
     }
 
-    const handleColorClick: React.MouseEventHandler<HTMLDivElement> = ({ target }) => {
-        if ((target as HTMLDivElement).classList.contains('color')) {
-            const color = target as HTMLDivElement
-            const [first, second] = getColor(color)
+    const handleColorClick: React.MouseEventHandler<HTMLDivElement> = e => {
+        const color = e.target as HTMLDivElement
 
+        if (color.classList.contains('color')) {
+            const [first, second] = getColor(color)
             document.body.style.backgroundColor = second
         }
     }

@@ -32,8 +32,8 @@ $mx-w: 1024px;
     background-color: black;
 
     footer {
-        background-color: #000;
-        color: #FFF;
+        background-color: white;
+        color: black;
     }
     
     .App {
@@ -55,6 +55,10 @@ $mx-w: 1024px;
 
         .note-layer {
             color: #000;
+        }
+
+        .line {
+            background-color: #111;
         }
     }
 }
