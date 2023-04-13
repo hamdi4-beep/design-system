@@ -10,14 +10,20 @@ function Section({
     title,
     children
 }: Props) {
-    const { setBg } = React.useContext(StateContext)
+    const { dispatch } = React.useContext(StateContext)
     const { type } = children
 
     let ctaElement: JSX.Element
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({ target }) => {
         const input = target as HTMLInputElement
-        setBg(input.value)
+        const value = input.value
+
+        dispatch({
+            type: 'change background',
+            value
+        })
+
         input.value = ''
     }
 

@@ -1,8 +1,22 @@
 import * as React from 'react'
 import { BsFillGearFill } from 'react-icons/bs'
+import { StateContext } from '../context/StateContext'
 
 function Header() {
     const listRef = React.createRef<HTMLDivElement>()
+    const {dispatch} = React.useContext(StateContext)
+
+    const handleResetClick: React.MouseEventHandler<HTMLButtonElement> = e => {
+        const body = document.body
+
+        dispatch({
+            type: 'change background',
+            value: ''
+        })
+
+        body.style.backgroundImage = ''
+        body.style.backgroundColor = 'white'
+    }
 
     const handleOpenClick: React.MouseEventHandler<SVGElement> = e => {
         const { current } = listRef
@@ -13,7 +27,7 @@ function Header() {
         const color = e.target as HTMLDivElement
 
         if (color.classList.contains('color')) {
-            const [first, second] = getColor(color)
+            const [,second] = getColor(color)
             document.body.style.backgroundColor = second
         }
     }
@@ -47,6 +61,10 @@ function Header() {
                     <BsFillGearFill onClick={handleOpenClick} style={{fontSize: '1.4rem'}} />
 
                     <div className="items-list hidden" ref={listRef}>
+                        <li>
+                            <button onClick={handleResetClick}>Reset</button>
+                        </li>
+
                         <li>
                             <span>Change Theme</span>
 

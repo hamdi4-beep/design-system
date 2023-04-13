@@ -6,25 +6,33 @@ import { StateContext } from './context/StateContext';
 import './sass/index.scss';
 
 function App() {
-  const [bg, setBg] = React.useState('')
+  const [event, dispatch] = React.useReducer((state: any, action: any) => {
+    switch (action.type) {
+      case 'change background':
+        return {
+          ...state,
+          value: action.value
+        }
 
-  React.useEffect(() => {
+      default:
+        return {}
+    }
+  }, {})
+
+  if (event.value) {
     const body = document.body as HTMLBodyElement
-    body.style.backgroundImage = `url(${bg})`
-  }, [bg])
+    body.style.backgroundImage = `url(${event.value})`
+  }
 
   return (
-    <React.Fragment>
-      <div className={bg ? 'App layer' : 'App'}>
+    <StateContext.Provider value={{event, dispatch}}>
+      <div className={event.value && 'App layer' || 'App'}>
         <Header />
-        
-        <StateContext.Provider value={{bg, setBg}}>
-          <Main />
-        </StateContext.Provider>
+        <Main />
       </div>
 
       <Footer />
-    </React.Fragment>
+    </StateContext.Provider>
   )
 }
 

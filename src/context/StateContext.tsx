@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-const setBg: React.Dispatch<React.SetStateAction<string>> = () => {}
+const dispatch: React.Dispatch<any> = () => {}
 
 export const StateContext = React.createContext({
-    bg: '',
-    setBg
+    event: {},
+    dispatch
 })

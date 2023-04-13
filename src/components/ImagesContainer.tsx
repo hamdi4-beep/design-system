@@ -2,11 +2,15 @@ import * as React from 'react'
 import { StateContext } from '../context/StateContext'
 
 function ImagesContainer() {
-    const {setBg} = React.useContext(StateContext)
+    const {dispatch} = React.useContext(StateContext)
 
     const clickHandler: React.MouseEventHandler<HTMLDivElement> = ({ target }) => {
         const img = target as HTMLImageElement
-        setBg(img.src)
+
+        dispatch({
+            type: 'change background',
+            value: img.src
+        })
     }
 
     return (
