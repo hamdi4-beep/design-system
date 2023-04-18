@@ -34,7 +34,10 @@ function Header() {
 
     const handleDarkModeClick: React.MouseEventHandler<HTMLSpanElement> = e => {
         const body = document.body as HTMLElement
+        const toggleContainer = e.target as HTMLDivElement
+
         body.classList.toggle('dark-mode')
+        toggleContainer.classList.toggle('toggled')
     }
 
     return (
@@ -77,7 +80,8 @@ function Header() {
                         </li>
 
                         <li>
-                            <span onClick={handleDarkModeClick}>Dark Mode</span>
+                            <span>Dark Mode</span>
+                            <div className="toggle" onClick={handleDarkModeClick}></div>
                         </li>
                     </div>
                 </ul>

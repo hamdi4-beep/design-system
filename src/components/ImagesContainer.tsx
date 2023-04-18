@@ -24,7 +24,7 @@ function ImagesContainer() {
             </div>
 
             <div className="img-3">
-                <img src="https://uploads-ssl.webflow.com/6074f6263548834cc1229762/63040b070806156a1fa88877_07.jpg" alt="" />
+                <img src="/assets/cyberpunk.jpg" alt="" />
             </div>
 
             <div className="img-4">
