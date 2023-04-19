@@ -2,12 +2,12 @@ import * as React from 'react'
 import { StateContext } from '../context/StateContext'
 
 type Props = {
-    title: string
+    heading: string
     children: JSX.Element
 }
 
 function Section({
-    title,
+    heading,
     children
 }: Props) {
     const { dispatch } = React.useContext(StateContext)
@@ -47,7 +47,7 @@ function Section({
     return (
         <section>
             <div className="section-header space-between">
-                <h2>{title}</h2>
+                <h2>{heading}</h2>
                 {ctaElement}
             </div>
 

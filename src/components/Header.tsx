@@ -6,17 +6,7 @@ function Header() {
     const listRef = React.createRef<HTMLDivElement>()
     const {dispatch} = React.useContext(StateContext)
 
-    const handleResetClick: React.MouseEventHandler<HTMLButtonElement> = e => {
-        const body = document.body
-
-        dispatch({
-            type: 'change background',
-            value: ''
-        })
-
-        body.style.backgroundImage = ''
-        body.style.backgroundColor = 'white'
-    }
+    const handleResetClick: React.MouseEventHandler<HTMLButtonElement> = e => location.href = '/'
 
     const handleOpenClick: React.MouseEventHandler<SVGElement> = e => {
         const { current } = listRef

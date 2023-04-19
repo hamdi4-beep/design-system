@@ -24,15 +24,15 @@ function Main() {
             line.style.top = `${y}px`
         })
 
-        return () => document.removeEventListener('scroll', () => {})
+        return () => document.removeEventListener('scroll', () => line.style.top = '0px')
     }, [])
 
     return (
         <main>
             <div className="line" ref={lineRef}></div>
 
-            {list.map(([title, component], i) => (
-                <Section title={title} key={i}>
+            {list.map(([name, component], i) => (
+                <Section heading={name} key={i}>
                     {component}
                 </Section>
             ))}
