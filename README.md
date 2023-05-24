@@ -15,7 +15,7 @@ A list of non-essential features that complement the overall experience:
 - Allows you to customize color schemes so you can set different themes that change the app's appearance. 
 - Allows you to set different wallpapers as background image that best matches your preference.  
 
-__
+___
 
 ## Stack
 A list of technologies that was used to develop the project:  
