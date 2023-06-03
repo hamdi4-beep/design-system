@@ -6,7 +6,7 @@ import { createRef, useEffect } from "react"
 
 const iconSize = '1.2rem'
 
-const list = Array.from(new Map([
+const components = Array.from(new Map([
     ['Styles Guide', <StylesGuide iconSize={iconSize} />],
     ['Assets Guide', <AssetsGuide iconSize={iconSize} />],
     ['Components Guide', <ComponentsGuide />]
@@ -29,9 +29,21 @@ function Main() {
 
     return (
         <main>
-            <div className="line" ref={lineRef}></div>
+            <div className="line" ref={lineRef}>
+                <span>
+                    <a href="#root">1</a>
+                </span>
 
-            {list.map(([name, component], i) => (
+                <span>
+                    <a href="#second">2</a>
+                </span>
+
+                <span>
+                    <a href="#third">3</a>
+                </span>
+            </div>
+
+            {components.map(([name, component], i) => (
                 <Section heading={name} key={i}>
                     {component}
                 </Section>

@@ -1,6 +1,6 @@
 function ComponentsGuide() {
     return (
-        <div className="section-guide">
+        <div className="section-guide" id="third">
             <p style={{
                 fontSize: '2.5rem',
                 textAlign: 'center'

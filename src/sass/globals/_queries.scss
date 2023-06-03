@@ -19,6 +19,14 @@
             background-color: black;
             width: 1px;
             height: 15rem;
+
+            span {
+                display: block;
+            }
+
+            span:not(:last-child) {
+                margin-bottom: .5em;
+            }
         }
     }
 

@@ -8,7 +8,7 @@ function AssetsGuide({
     iconSize: string
 }) {
     return (
-        <div className="section-guide">
+        <div className="section-guide" id='second'>
             <div className="images-section">
                 <div className="space-between">
                     <h3>Image Assets</h3>

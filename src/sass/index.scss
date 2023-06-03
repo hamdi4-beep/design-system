@@ -1,10 +1,10 @@
 @forward 'globals';
 
-$mx-w: 1024px;
+$max-w: 1024px;
 
 .App,
 .wrapper {
-    max-width: $mx-w;
+    max-width: $max-w;
     width: 100%;
     margin-inline: auto;
 }
@@ -25,41 +25,6 @@ $mx-w: 1024px;
 
     &.layer {
         color: white;
-    }
-}
-
-.dark-mode {
-    background-color: black !important;
-
-    footer {
-        background-color: white;
-        color: black;
-    }
-    
-    .App {
-
-        & > * {
-            color: white;
-        }
-
-        .cta-btn {
-            background-color: #FF0;
-            color: #000;
-        }
-
-        .section-guide {
-            background: none;
-            background-color: #111;
-            color: #FFF;
-        }
-
-        .note-layer {
-            color: #000;
-        }
-
-        .line {
-            background-color: #111;
-        }
     }
 }
 

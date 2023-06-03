@@ -1,12 +1,10 @@
 import * as React from 'react'
 import { BsFillGearFill } from 'react-icons/bs'
-import { StateContext } from '../context/StateContext'
 
 function Header() {
     const listRef = React.createRef<HTMLDivElement>()
-    const {dispatch} = React.useContext(StateContext)
 
-    const handleResetClick: React.MouseEventHandler<HTMLButtonElement> = e => location.href = '/'
+    const handleResetClick: React.MouseEventHandler<HTMLButtonElement> = e => location.href = '/design-system'
 
     const handleOpenClick: React.MouseEventHandler<SVGElement> = e => {
         const { current } = listRef
@@ -20,14 +18,6 @@ function Header() {
             const [,second] = getColor(color)
             document.body.style.backgroundColor = second
         }
-    }
-
-    const handleDarkModeClick: React.MouseEventHandler<HTMLSpanElement> = e => {
-        const body = document.body as HTMLElement
-        const toggleContainer = e.target as HTMLDivElement
-
-        body.classList.toggle('dark-mode')
-        toggleContainer.classList.toggle('toggled')
     }
 
     return (
@@ -67,11 +57,6 @@ function Header() {
                                 <div className="color three"></div>
                                 <div className="color four"></div>
                             </div>
-                        </li>
-
-                        <li>
-                            <span>Dark Mode</span>
-                            <div className="toggle" onClick={handleDarkModeClick}></div>
                         </li>
                     </div>
                 </ul>
