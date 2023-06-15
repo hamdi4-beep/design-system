@@ -1,10 +1,19 @@
+import * as React from 'react'
+
+const {
+    createContext,
+    useContext
+} = React
+
+const IndexContext = createContext(0)
+
 const Component: React.FC<{
     title: string
-    index: number
 }> = ({
-    title,
-    index
+    title
 }) => {
+    const index = useContext(IndexContext)
+
     return (
         <div className="component">
             <div className="aside">
@@ -20,14 +29,20 @@ const Component: React.FC<{
 }
 
 const components = [
-    <Component title='Minimalistic' index={1} />,
-    <Component title='Inspirational' index={2} />
+    <Component title='Minimalistic' />,
+    <Component title='Inspirational' />,
+    <Component title='UI/UX' />,
+    <Component title='Blur' />
 ]
 
 function ComponentsGuide() {
     return (
         <div className="section-guide" id="third">
-            {components.map((component) => component)}
+            {components.map((component, i) => (
+                <IndexContext.Provider value={i + 1} key={i}>
+                    {component}
+                </IndexContext.Provider>
+            ))}
         </div>
     )
 }
