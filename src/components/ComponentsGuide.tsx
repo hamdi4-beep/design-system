@@ -5,19 +5,26 @@ const {
     useContext
 } = React
 
-const IndexContext = createContext(0)
+const CounterContext = createContext(0)
 
 const Component: React.FC<{
     title: string
 }> = ({
     title
 }) => {
-    const index = useContext(IndexContext)
+    const index = useContext(CounterContext)
 
     return (
         <div className="component">
             <div className="aside">
                 <span>0{index}</span>
+                
+                <div className="icons-list">
+                    <div className="icon"></div>
+                    <div className="icon"></div>
+                    <div className="icon"></div>
+                    <div className="icon"></div>
+                </div>
             </div>
 
             <div className="inner">
@@ -39,9 +46,9 @@ function ComponentsGuide() {
     return (
         <div className="section-guide" id="third">
             {components.map((component, i) => (
-                <IndexContext.Provider value={i + 1} key={i}>
+                <CounterContext.Provider value={i + 1} key={i}>
                     {component}
-                </IndexContext.Provider>
+                </CounterContext.Provider>
             ))}
         </div>
     )
