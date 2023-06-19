@@ -19,7 +19,6 @@ header {
         svg {
             display: block;
             margin-left: auto;
-            margin-bottom: .5em;
             text-align: right;
         }
 
@@ -52,6 +51,7 @@ header {
 
         .items-list {
             box-shadow: 0 0 1px rgb(0 0 0 / .8);
+            margin-top: .5em;
         }
 
         .colors-list {
@@ -101,5 +101,9 @@ header {
             text-align: left;
             line-height: 1.2;
         }
+    }
+
+    .container {
+        align-items: center;
     }
 }

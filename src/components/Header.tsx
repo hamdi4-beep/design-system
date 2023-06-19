@@ -13,7 +13,7 @@ function Header() {
         <header>
             <h1>Design System</h1>
 
-            <div className="space-between">
+            <div className="container space-between">
                 <div className="user">
                     <div className="user-img">
                         <img src='./assets/user.jpg' alt='' />
