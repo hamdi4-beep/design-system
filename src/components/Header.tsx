@@ -4,20 +4,9 @@ import { BsFillGearFill } from 'react-icons/bs'
 function Header() {
     const listRef = React.createRef<HTMLDivElement>()
 
-    const handleResetClick: React.MouseEventHandler<HTMLButtonElement> = e => location.href = '/design-system'
-
     const handleOpenClick: React.MouseEventHandler<SVGElement> = e => {
         const { current } = listRef
         current?.classList.toggle('hidden')
-    }
-
-    const handleColorClick: React.MouseEventHandler<HTMLDivElement> = e => {
-        const color = e.target as HTMLDivElement
-
-        if (color.classList.contains('color')) {
-            const [,second] = getColor(color)
-            document.body.style.backgroundColor = second
-        }
     }
 
     return (
@@ -45,13 +34,13 @@ function Header() {
 
                     <div className="items-list hidden" ref={listRef}>
                         <li>
-                            <button onClick={handleResetClick}>Reset</button>
+                            <button onClick={e => location.reload()}>Reset</button>
                         </li>
 
                         <li>
                             <span>Change Theme</span>
 
-                            <div className="colors-list" onClick={handleColorClick}>
+                            <div className="colors-list">
                                 <div className="color one"></div>
                                 <div className="color two"></div>
                                 <div className="color three"></div>
@@ -63,11 +52,6 @@ function Header() {
             </div>
         </header>
     )
-}
-
-function getColor(elem: HTMLDivElement): RegExpMatchArray {
-    const prop = getComputedStyle(elem).getPropertyValue('background-image')
-    return prop.match(/rgb\([\d\s,]+\)/g)!
 }
 
 export default Header
