@@ -8,9 +8,9 @@ const {
 const CounterContext = createContext(0)
 
 const Component: React.FC<{
-    title: string
+    header: string
 }> = ({
-    title
+    header
 }) => {
     const index = useContext(CounterContext)
 
@@ -18,7 +18,7 @@ const Component: React.FC<{
         <div className="component">
             <div className="aside">
                 <span>0{index}</span>
-                
+
                 <div className="icons-list">
                     <div className="icon"></div>
                     <div className="icon"></div>
@@ -28,7 +28,7 @@ const Component: React.FC<{
             </div>
 
             <div className="inner">
-                <h3>{title}</h3>
+                <h3>{header}</h3>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores perferendis aut vitae officia ex pariatur porro corrupti officiis inventore explicabo.</p>
             </div>
         </div>
@@ -36,10 +36,10 @@ const Component: React.FC<{
 }
 
 const components = [
-    <Component title='Minimalistic' />,
-    <Component title='Inspirational' />,
-    <Component title='UI/UX' />,
-    <Component title='Blur' />
+    <Component header='Minimalistic' />,
+    <Component header='Inspirational' />,
+    <Component header='UI/UX' />,
+    <Component header='AI' />
 ]
 
 function ComponentsGuide() {
