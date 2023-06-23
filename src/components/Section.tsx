@@ -8,12 +8,10 @@ type Props = {
 
 function Section({
     heading,
-    children
+    children,
 }: Props) {
     const { dispatch } = React.useContext(StateContext)
     const { type } = children
-
-    let ctaElement: JSX.Element
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({ target }) => {
         const input = target as HTMLInputElement
@@ -27,28 +25,18 @@ function Section({
         input.value = ''
     }
 
-    switch (type.name) {
-        case 'StylesGuide':
-            ctaElement = <button className='cta-btn'>Add Element</button>
-            break
-
-        case 'AssetsGuide':
-            ctaElement = <input type='text' placeholder='Search URL...' onChange={handleChange} style={{borderRadius:'50px'}} />
-            break
-
-        case 'ComponentsGuide':
-            ctaElement = <button className="cta-btn">Create Component</button>
-            break
-
-        default:
-            ctaElement = <></>
-    }
-
     return (
         <section>
             <div className="section-header space-between">
                 <h2>{heading}</h2>
-                {ctaElement}
+
+                {type.name === 'AssetsGuide' && (
+                    <input
+                        type='text'
+                        placeholder='URL Search...'
+                        style={{borderRadius: '50px'}}
+                        onChange={handleChange} />
+                )}
             </div>
 
             {children}

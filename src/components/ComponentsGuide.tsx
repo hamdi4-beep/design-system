@@ -5,19 +5,19 @@ const {
     useContext
 } = React
 
-const CounterContext = createContext(0)
+const IndexContext = createContext(0)
 
 const Component: React.FC<{
     header: string
 }> = ({
     header
 }) => {
-    const index = useContext(CounterContext)
+    const index = useContext(IndexContext)
 
     return (
         <div className="component">
-            <div className="aside">
-                <span>0{index}</span>
+            <div className="header">
+                <span>0{index + 1}</span>
 
                 <div className="icons-list">
                     <div className="icon"></div>
@@ -27,10 +27,8 @@ const Component: React.FC<{
                 </div>
             </div>
 
-            <div className="inner">
-                <h3>{header}</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores perferendis aut vitae officia ex pariatur porro corrupti officiis inventore explicabo.</p>
-            </div>
+            <h3>{header}</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt voluptatum recusandae, eum voluptas illum voluptatem dolorum animi unde facilis aperiam.</p>
         </div>
     )
 }
@@ -46,9 +44,11 @@ function ComponentsGuide() {
     return (
         <div className="section-guide" id="third">
             {components.map((component, i) => (
-                <CounterContext.Provider value={i + 1} key={i}>
-                    {component}
-                </CounterContext.Provider>
+                <IndexContext.Provider
+                    value={i}
+                    key={i}>
+                        {component}
+                </IndexContext.Provider>
             ))}
         </div>
     )

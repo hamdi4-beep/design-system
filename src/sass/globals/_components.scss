@@ -8,12 +8,12 @@
     }
 
     h3 {
+        margin-bottom: .5em !important;
         padding-bottom: .5em;
-        margin-bottom: .5em;
         border-bottom: 1px solid black;
     }
 
-    .aside {
+    .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -21,11 +21,10 @@
 
         .icons-list {
             display: flex;
-            gap: .5rem;
-
+            gap: .5em;
+    
             .icon {
                 border: 1px solid black;
-                color: white;
                 width: 2rem;
                 height: 2rem;
                 border-radius: 50%;

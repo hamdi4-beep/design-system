@@ -44,8 +44,10 @@ function Main() {
             </div>
 
             {components.map(([name, component], i) => (
-                <Section heading={name} key={i}>
-                    {component}
+                <Section
+                    heading={name}
+                    key={i}>
+                        {component}
                 </Section>
             ))}
         </main>
