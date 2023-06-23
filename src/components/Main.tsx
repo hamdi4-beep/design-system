@@ -4,11 +4,9 @@ import AssetsGuide from "./AssetsGuide"
 import ComponentsGuide from "./ComponentsGuide"
 import { createRef, useEffect } from "react"
 
-const iconSize = '1.2rem'
-
 const components = Array.from(new Map([
-    ['Styles Guide', <StylesGuide iconSize={iconSize} />],
-    ['Assets Guide', <AssetsGuide iconSize={iconSize} />],
+    ['Styles Guide', <StylesGuide />],
+    ['Assets Guide', <AssetsGuide />],
     ['Components Guide', <ComponentsGuide />]
 ]))
 

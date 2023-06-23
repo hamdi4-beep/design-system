@@ -1,18 +1,12 @@
-import { BiEdit } from 'react-icons/bi'
 import ImagesContainer from './ImagesContainer'
 import VideosContainer from './VideosContainer'
 
-function AssetsGuide({
-    iconSize
-}: {
-    iconSize: string
-}) {
+function AssetsGuide() {
     return (
         <div className="section-guide" id='second'>
             <div className="images-section">
                 <div className="space-between">
                     <h3>Image Assets</h3>
-                    <BiEdit fontSize={iconSize} />
                 </div>
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, suscipit!</p>
@@ -25,7 +19,6 @@ function AssetsGuide({
             <div className="videos-section">
                 <div className="space-between">
                     <h3>Video Assets</h3>
-                    <BiEdit fontSize={iconSize} />
                 </div>
                 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, hic!</p>

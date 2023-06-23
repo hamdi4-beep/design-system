@@ -1,25 +1,12 @@
 import * as React from 'react'
-import NoteLayer from './subComponents/NoteLayer'
-import { BiEdit } from 'react-icons/bi'
 
-function StylesGuide({
-    iconSize
-}: {
-    iconSize: string
-}) {
-    const layerRef = React.createRef<HTMLDivElement>()
-
-    const handleOpenClick: React.MouseEventHandler<SVGElement> = (e) => {
-        const { current } = layerRef
-        current?.classList.add('reveal')
-    }
+function StylesGuide() {
 
     return (
         <div className="section-guide">
             <div className="buttons-section">
                 <div className="space-between">
                     <h3>Button Style</h3>
-                    <BiEdit fontSize={iconSize} onClick={handleOpenClick} />
                 </div>
                 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum libero voluptas ea ipsam. Dolor nulla, eum corporis voluptate quae nihil.</p>
@@ -28,14 +15,11 @@ function StylesGuide({
                     <button className='default'>Default</button>
                     <button className="squares">Squares</button>
                 </div>
-
-                <NoteLayer ref={layerRef} />
             </div>
 
             <div className="input-section">
                 <div className="space-between">
                     <h3>Input Style</h3>
-                    <BiEdit fontSize={iconSize} />
                 </div>
 
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium neque veniam obcaecati suscipit inventore pariatur!</p>
@@ -48,7 +32,6 @@ function StylesGuide({
             <div className="checkbox-section">
                 <div className="space-between">
                     <h3>Checkbox Style</h3>
-                    <BiEdit fontSize={iconSize} />
                 </div>
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt ipsam praesentium, distinctio excepturi itaque.</p>
@@ -61,7 +44,6 @@ function StylesGuide({
             <div className="select-section">
                 <div className="space-between">
                     <h3>Select Style</h3>
-                    <BiEdit fontSize={iconSize} />
                 </div>
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus magnam quam consequatur enim tenetur, officiis eum?</p>
