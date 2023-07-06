@@ -1,8 +1,15 @@
+import * as React from 'react'
+
 import Section from "./Section"
 import StylesGuide from './StylesGuide'
 import AssetsGuide from "./AssetsGuide"
 import ComponentsGuide from "./ComponentsGuide"
-import { createRef, useEffect } from "react"
+
+const {
+    createRef,
+    useEffect,
+    useState
+} = React
 
 const components = Array.from(new Map([
     ['Styles Guide', <StylesGuide />],
@@ -13,13 +20,15 @@ const components = Array.from(new Map([
 const lineRef = createRef<HTMLDivElement>()
 
 function Main() {
+    const [posY, setPosY] = useState(0)
+
     useEffect(() => {
         const { current } = lineRef
         const line = current as HTMLDivElement
 
         document.addEventListener('scroll', e => {
             const y = window.pageYOffset
-            line.style.top = `${y}px`
+            setPosY(y)
         })
 
         return () => document.removeEventListener('scroll', () => line.style.top = '0px')
@@ -27,7 +36,7 @@ function Main() {
 
     return (
         <main>
-            <div className="line" ref={lineRef}>
+            <div className="line" ref={lineRef} style={{top: posY + 'px'}}>
                 <span>
                     <a href="#root">1</a>
                 </span>

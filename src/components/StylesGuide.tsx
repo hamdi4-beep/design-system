@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 function StylesGuide() {
-
     return (
         <div className="section-guide">
             <div className="buttons-section">

@@ -1,13 +1,14 @@
 import * as React from 'react'
 import { BsFillGearFill } from 'react-icons/bs'
 
-function Header() {
-    const listRef = React.createRef<HTMLDivElement>()
+const {
+    useState
+} = React
 
-    const handleOpenClick: React.MouseEventHandler<SVGElement> = e => {
-        const { current } = listRef
-        current?.classList.toggle('hidden')
-    }
+function Header() {
+    const [hidden, setHidden] = useState(true)
+
+    const handleOpenClick: React.MouseEventHandler<SVGElement> = e => setHidden(!hidden)
 
     return (
         <header>
@@ -32,7 +33,7 @@ function Header() {
                 <ul className="menu-list">
                     <BsFillGearFill onClick={handleOpenClick} style={{fontSize: '1.4rem'}} />
 
-                    <div className="items-list hidden" ref={listRef}>
+                    <div className={hidden ? 'items-list hidden' : 'items-list'}>
                         <li>
                             <button onClick={e => location.reload()}>Reset</button>
                         </li>
@@ -47,6 +48,8 @@ function Header() {
                                 <div className="color four"></div>
                             </div>
                         </li>
+
+                        <li>Hide Interface</li>
                     </div>
                 </ul>
             </div>

@@ -26,6 +26,14 @@ $max-w: 1024px;
     &.layer {
         color: white;
     }
+
+    .line {
+        margin-bottom: 1em;
+
+        span {
+            margin-right: .5em;
+        }
+    }
 }
 
 .space-between {
