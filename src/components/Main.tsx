@@ -19,7 +19,7 @@ const components = Array.from(new Map([
 
 function Main() {
     const [posY, setPosY] = useState(0)
-    let timerIDRef = useRef<null | number>()
+    let timerIDRef = useRef<number>()
 
     const handleScroll = () => {
         let timerID = timerIDRef.current!
@@ -29,11 +29,12 @@ function Main() {
 
     useEffect(() => {
         document.addEventListener('scroll', handleScroll)
+
         return () => {
             clearTimeout(timerIDRef.current!)
             document.removeEventListener('scroll', handleScroll)
         }
-    }, [])
+    }, [window.scrollY])
 
     return (
         <main>

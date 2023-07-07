@@ -5,8 +5,8 @@ const {
 } = React
 
 const videos = [
-    './assets/Particles.mp4',
-    './assets/anime.mp4'
+    './assets/videos/Particles.mp4',
+    './assets/videos/anime.mp4'
 ]
 
 function VideosContainer() {

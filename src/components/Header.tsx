@@ -17,7 +17,7 @@ function Header() {
             <div className="container space-between">
                 <div className="user">
                     <div className="user-img">
-                        <img src='./assets/user.jpg' alt='' />
+                        <img src='./assets/images/user.jpg' alt='' />
                     </div>
 
                     <div className="user-info">
