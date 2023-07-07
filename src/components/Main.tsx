@@ -19,18 +19,18 @@ const components = Array.from(new Map([
 
 function Main() {
     const [posY, setPosY] = useState(0)
-    let timerRef = useRef<null | number>()
+    let timerIDRef = useRef<null | number>()
 
     const handleScroll = () => {
-        let timerID = timerRef.current!
+        let timerID = timerIDRef.current!
         clearTimeout(timerID)
-        timerID = setTimeout(() => setPosY(window.pageYOffset), 300)
+        timerID = setTimeout(() => setPosY(window.scrollY), 300)
     }
 
     useEffect(() => {
         document.addEventListener('scroll', handleScroll)
         return () => {
-            clearTimeout(timerRef.current!)
+            clearTimeout(timerIDRef.current!)
             document.removeEventListener('scroll', handleScroll)
         }
     }, [])
@@ -52,9 +52,7 @@ function Main() {
             </div>
 
             {components.map(([name, component], i) => (
-                <Section
-                    heading={name}
-                    key={i}>
+                <Section heading={name} key={i}>
                         {component}
                 </Section>
             ))}
