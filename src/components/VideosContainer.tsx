@@ -4,6 +4,11 @@ const {
     useState
 } = React
 
+const videos = [
+    './assets/Particles.mp4',
+    './assets/anime.mp4'
+]
+
 function VideosContainer() {
     const [muted, setMuted] = useState(true)
 
@@ -11,13 +16,17 @@ function VideosContainer() {
 
     return (
         <div className="videos-container">
-            <div className="video-1">
-                <video src="./assets/Particles.mp4" onClick={handleClick} autoPlay muted={muted} loop />
-            </div>
-
-            <div className="video-2">
-                <video src="./assets/anime.mp4" onClick={handleClick} autoPlay muted={muted} loop />
-            </div>
+            {videos.map((url, i) => (
+                <div className={`video-${i + 1}`} key={i}>
+                    <video
+                        src={url}
+                        onClick={handleClick}
+                        muted={muted}
+                        autoPlay
+                        loop
+                    />
+                </div>
+            ))}
         </div>
     )
 }

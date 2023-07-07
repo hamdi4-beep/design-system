@@ -6,7 +6,7 @@ import AssetsGuide from "./AssetsGuide"
 import ComponentsGuide from "./ComponentsGuide"
 
 const {
-    createRef,
+    useRef,
     useEffect,
     useState
 } = React
@@ -17,26 +17,27 @@ const components = Array.from(new Map([
     ['Components Guide', <ComponentsGuide />]
 ]))
 
-const lineRef = createRef<HTMLDivElement>()
-
 function Main() {
     const [posY, setPosY] = useState(0)
+    let timerRef = useRef<null | number>()
+
+    const handleScroll = () => {
+        let timerID = timerRef.current!
+        clearTimeout(timerID)
+        timerID = setTimeout(() => setPosY(window.pageYOffset), 300)
+    }
 
     useEffect(() => {
-        const { current } = lineRef
-        const line = current as HTMLDivElement
-
-        document.addEventListener('scroll', e => {
-            const y = window.pageYOffset
-            setPosY(y)
-        })
-
-        return () => document.removeEventListener('scroll', () => line.style.top = '0px')
+        document.addEventListener('scroll', handleScroll)
+        return () => {
+            clearTimeout(timerRef.current!)
+            document.removeEventListener('scroll', handleScroll)
+        }
     }, [])
 
     return (
         <main>
-            <div className="line" ref={lineRef} style={{top: posY + 'px'}}>
+            <div className="line" style={{top: posY + 'px'}}>
                 <span>
                     <a href="#root">1</a>
                 </span>

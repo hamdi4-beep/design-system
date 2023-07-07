@@ -28,6 +28,7 @@ $max-w: 1024px;
     }
 
     .line {
+        transition: top 300ms ease;
         margin-bottom: 1em;
 
         span {

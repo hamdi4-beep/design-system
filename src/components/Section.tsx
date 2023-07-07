@@ -10,17 +10,14 @@ function Section({
     heading,
     children,
 }: Props) {
-    const { dispatch } = React.useContext(StateContext)
-    const { type } = children
+    const {setBackgroundURL} = React.useContext(StateContext)
+    const {type} = children
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({ target }) => {
         const input = target as HTMLInputElement
         const value = input.value
 
-        dispatch({
-            type: 'change background',
-            value
-        })
+        setBackgroundURL(value)
 
         input.value = ''
     }

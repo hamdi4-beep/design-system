@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-const dispatch: React.Dispatch<any> = () => {}
+const setBackgroundURL: React.Dispatch<React.SetStateAction<string>> = (URL) => {}
 
 export const StateContext = React.createContext({
-    event: {},
-    dispatch
+    backgroundURL: '',
+    setBackgroundURL
 })
