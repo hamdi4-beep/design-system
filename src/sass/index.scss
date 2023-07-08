@@ -31,15 +31,6 @@ $max-w: 1024px;
     &.layer {
         color: white;
     }
-
-    .line {
-        transition: top 300ms ease;
-        margin-bottom: 1em;
-
-        span {
-            margin-right: .5em;
-        }
-    }
 }
 
 .space-between {
