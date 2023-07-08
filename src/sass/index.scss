@@ -12,6 +12,11 @@ $max-w: 1024px;
 .App {
     padding: 1.5em;
     padding-top: 0;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: all 300ms ease;
+    isolation: isolate;
 
     &.layer::after {
         content: '';
@@ -19,8 +24,8 @@ $max-w: 1024px;
         position: fixed;
         inset: 0;
         left: 0;
-        background: radial-gradient(circle, rgb(0 0 0 / .2), rgb(0 0 0 / .8));
         z-index: -1;
+        background: radial-gradient(circle, rgb(0 0 0 / .2), rgb(0 0 0 / .8));
     }
 
     &.layer {

@@ -15,14 +15,9 @@ const {
 function App() {
   const [backgroundURL, setBackgroundURL] = useState('')
 
-  useEffect(() => {
-    const body = document.body as HTMLBodyElement
-    body.style.backgroundImage = `url(${backgroundURL})`
-  }, [backgroundURL])
-
   return (
     <StateContext.Provider value={{backgroundURL, setBackgroundURL}}>
-      <div className={backgroundURL && 'App layer' || 'App'}>
+      <div className={backgroundURL && 'App layer' || 'App'} style={{backgroundImage: `url(${backgroundURL})`}}>
         <Header />
         <Main />
       </div>

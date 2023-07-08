@@ -31,7 +31,10 @@ function Header() {
                 </div>
 
                 <ul className="menu-list">
-                    <BsFillGearFill onClick={handleOpenClick} style={{fontSize: '1.4rem'}} />
+                    <BsFillGearFill
+                        onClick={handleOpenClick}
+                        style={{fontSize: '1.4rem'}}
+                    />
 
                     <div className={hidden ? 'items-list hidden' : 'items-list'}>
                         <li>
