@@ -18,11 +18,13 @@ function App() {
   return (
     <StateContext.Provider value={{backgroundURL, setBackgroundURL}}>
       <div className={backgroundURL && 'App layer' || 'App'} style={{backgroundImage: `url(${backgroundURL})`}}>
-        <Header />
-        <Main />
-      </div>
+        <div className="content">
+          <Header />
+          <Main />
+        </div>
 
-      <Footer />
+        <Footer />
+      </div>
     </StateContext.Provider>
   )
 }

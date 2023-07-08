@@ -9,7 +9,7 @@ function Footer() {
 
     return (
         <footer>
-            <div className="wrapper space-between">
+            <div className="bottom-wrapper space-between">
                 <p>Made by
                     <strong> Hamdi Kamel</strong>
                 </p>

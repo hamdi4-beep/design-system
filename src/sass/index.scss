@@ -2,16 +2,16 @@
 
 $max-w: 1024px;
 
-.App,
-.wrapper {
+.content,
+.bottom-wrapper {
     max-width: $max-w;
     width: 100%;
     margin-inline: auto;
+    padding: 1.5em;
 }
 
 .App {
-    padding: 1.5em;
-    padding-top: 0;
+    outline: 5px solid blue;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
