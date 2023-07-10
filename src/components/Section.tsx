@@ -15,11 +15,7 @@ function Section({
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({ target }) => {
         const input = target as HTMLInputElement
-        const value = input.value
-
-        setBackgroundURL(value)
-
-        input.value = ''
+        setBackgroundURL(input.value)
     }
 
     return (
@@ -27,12 +23,14 @@ function Section({
             <div className="section-header space-between">
                 <h2>{heading}</h2>
 
-                {type.name === 'AssetsGuide' && (
+                {// Only display the input element, if the child element is AssetsGuide component
+                type.name === 'AssetsGuide' && (
                     <input
                         type='text'
                         placeholder='URL Search...'
                         style={{borderRadius: '50px'}}
-                        onChange={handleChange} />
+                        onChange={handleChange}
+                    />
                 )}
             </div>
 

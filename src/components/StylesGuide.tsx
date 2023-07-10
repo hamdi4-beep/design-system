@@ -1,6 +1,19 @@
 import * as React from 'react'
 
+const {
+    useEffect,
+    useState
+} = React
+
 function StylesGuide() {
+    const [counter, setCounter] = useState(0)
+
+    useEffect(() => {
+        setCounter((prevCounter) => prevCounter + 1)
+        setCounter((prevCounter) => prevCounter + 1)
+        setCounter((prevCounter) => prevCounter + 1)
+    }, [])
+
     return (
         <div className="section-guide">
             <div className="buttons-section">
@@ -11,8 +24,8 @@ function StylesGuide() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum libero voluptas ea ipsam. Dolor nulla, eum corporis voluptate quae nihil.</p>
                 
                 <div className="section-content flex-center">
-                    <button className='default'>Default</button>
-                    <button className="squares">Squares</button>
+                    <button className="default">Default</button>
+                    <button className="squares" onClick={() => console.log(counter)}>Squares</button>
                 </div>
             </div>
 

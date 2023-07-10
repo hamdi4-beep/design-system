@@ -8,7 +8,11 @@ const URLS = [
     'https://i.pinimg.com/originals/50/54/5e/50545e40f9d985da117eb9aed395bdf8.jpg'
 ]
 
-function ImagesContainer() {
+const Image: React.FC<{
+    URL: string
+}> = ({
+    URL
+}) => {
     const {setBackgroundURL} = React.useContext(StateContext)
 
     const clickHandler: React.MouseEventHandler<HTMLDivElement> = (e) => {
@@ -17,15 +21,18 @@ function ImagesContainer() {
     }
 
     return (
+        <div
+            className='img'
+            onClick={clickHandler}>
+                <img src={URL} alt="" />
+        </div>
+    )
+}
+
+function ImagesContainer() {
+    return (
         <div className="images-container">
-            {URLS.map((url, i) => (
-                <div
-                    className={'img-' + i}
-                    onClick={clickHandler}
-                    key={i}>
-                        <img src={url} alt="" />
-                </div>
-            ))}
+            {URLS.map((url, i) => (<Image URL={url} key={i} />))}
         </div>
     )
 }

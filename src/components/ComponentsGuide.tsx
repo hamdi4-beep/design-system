@@ -8,16 +8,16 @@ const {
 const IndexContext = createContext(0)
 
 const Component: React.FC<{
-    header: string
+    heading: string
 }> = ({
-    header
+    heading
 }) => {
     const index = useContext(IndexContext)
 
     return (
         <div className="component">
             <div className="header">
-                <span>0{index + 1}</span>
+                <span>{index}</span>
 
                 <div className="icons-list">
                     <div className="icon"></div>
@@ -27,17 +27,17 @@ const Component: React.FC<{
                 </div>
             </div>
 
-            <h3>{header}</h3>
+            <h3>{heading}</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt voluptatum recusandae, eum voluptas illum voluptatem dolorum animi unde facilis aperiam.</p>
         </div>
     )
 }
 
 const components = [
-    <Component header='Minimalistic' />,
-    <Component header='Inspirational' />,
-    <Component header='UI/UX' />,
-    <Component header='AI' />
+    <Component heading='Minimalistic' />,
+    <Component heading='Inspirational' />,
+    <Component heading='UI/UX' />,
+    <Component heading='AI' />
 ]
 
 function ComponentsGuide() {
@@ -45,7 +45,7 @@ function ComponentsGuide() {
         <div className="section-guide" id="third">
             {components.map((component, i) => (
                 <IndexContext.Provider
-                    value={i}
+                    value={0 + (i + 1)}
                     key={i}>
                         {component}
                 </IndexContext.Provider>

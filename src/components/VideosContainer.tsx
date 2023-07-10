@@ -9,24 +9,32 @@ const videos = [
     './assets/videos/anime.mp4'
 ]
 
-function VideosContainer() {
+const Video: React.FC<{
+    URL: string
+}> = ({
+    URL
+}) => {
     const [muted, setMuted] = useState(true)
 
     const handleClick: React.MouseEventHandler<HTMLVideoElement> = e => setMuted(!muted)
 
     return (
+        <div className='video'>
+            <video
+                src={URL}
+                onClick={handleClick}
+                muted={muted}
+                autoPlay
+                loop
+            />
+        </div>
+    )
+}
+
+function VideosContainer() {
+    return (
         <div className="videos-container">
-            {videos.map((url, i) => (
-                <div className={`video-${i + 1}`} key={i}>
-                    <video
-                        src={url}
-                        onClick={handleClick}
-                        muted={muted}
-                        autoPlay
-                        loop
-                    />
-                </div>
-            ))}
+            {videos.map((url, i) => (<Video URL={url} key={i} />))}
         </div>
     )
 }

@@ -4,8 +4,9 @@ import {
     FaTwitter
 } from 'react-icons/fa'
 
+const iconSize = '1.4rem'
+
 function Footer() {
-    const iconSize = '1.4rem'
 
     return (
         <footer>

@@ -6,9 +6,9 @@ const {
 } = React
 
 const MenuList: React.FC = () => {
-    const [hidden, setHidden] = useState(true)
+    const [hidden, setHidden] = useState(true) // Using hidden state, we toggle the visibility of the menu list
 
-    const handleOpenClick: React.MouseEventHandler<SVGElement> = e => setHidden(!hidden)
+    const handleOpenClick: React.MouseEventHandler<SVGElement> = e => setHidden(prevHidden => !prevHidden)
 
     return (
         <ul className="menu-list">

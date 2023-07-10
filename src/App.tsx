@@ -8,7 +8,6 @@ import { StateContext } from './context/StateContext';
 import './sass/index.scss';
 
 const {
-  useEffect,
   useState
 } = React
 
