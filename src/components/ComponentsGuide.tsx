@@ -1,29 +1,22 @@
-import * as React from 'react'
-
-const {
-    createContext,
-    useContext
-} = React
-
-const IndexContext = createContext(0)
-
 const Component: React.FC<{
     heading: string
+    index: number
 }> = ({
-    heading
+    heading,
+    index
 }) => {
-    const index = useContext(IndexContext)
-
     return (
         <div className="component">
             <div className="header">
                 <span>{index}</span>
 
                 <div className="icons-list">
-                    <div className="icon"></div>
-                    <div className="icon"></div>
-                    <div className="icon"></div>
-                    <div className="icon"></div>
+                    {
+                        Array.from({
+                            length: 4
+                        })
+                        .map((_, i) => (<div className='icon' key={i} />))
+                    }
                 </div>
             </div>
 
@@ -33,22 +26,22 @@ const Component: React.FC<{
     )
 }
 
-const components = [
-    <Component heading='Minimalistic' />,
-    <Component heading='Inspirational' />,
-    <Component heading='UI/UX' />,
-    <Component heading='AI' />
+const headings = [
+    'Minimalistic',
+    'Inspirational',
+    'UI/UX',
+    'AI'
 ]
 
 function ComponentsGuide() {
     return (
         <div className="section-guide" id="third">
-            {components.map((component, i) => (
-                <IndexContext.Provider
-                    value={0 + (i + 1)}
-                    key={i}>
-                        {component}
-                </IndexContext.Provider>
+            {headings.map((heading, i) => (
+                <Component
+                    heading={heading}
+                    index={i + 1}
+                    key={i}
+                />
             ))}
         </div>
     )

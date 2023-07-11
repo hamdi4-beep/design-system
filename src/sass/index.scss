@@ -14,8 +14,7 @@ $max-w: 1024px;
     outline: 5px solid blue;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
-    transition: all 300ms ease;
+    transition: background-image 300ms ease;
     isolation: isolate;
 
     &.layer::after {

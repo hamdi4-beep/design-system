@@ -1,30 +1,30 @@
-import * as React from 'react';
+import * as React from 'react'
 
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
-import { StateContext } from './context/StateContext';
+import { useBackground } from './context/StateContext';
 import './sass/index.scss';
 
-const {
-  useState
-} = React
-
 function App() {
-  const [backgroundURL, setBackgroundURL] = useState('')
+  const {
+    backgroundURL
+  } = useBackground()
+
+  let className = 'App'
+
+  if (backgroundURL) className += ' layer'
 
   return (
-    <StateContext.Provider value={{backgroundURL, setBackgroundURL}}>
-      <div className={backgroundURL && 'App layer' || 'App'} style={{backgroundImage: `url(${backgroundURL})`}}>
+    <div className={className} style={{backgroundImage: `url(${backgroundURL})`}}>
         <div className="content">
           <Header />
           <Main />
         </div>
 
-        <Footer />
-      </div>
-    </StateContext.Provider>
+      <Footer />
+    </div>
   )
 }
 

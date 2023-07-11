@@ -5,7 +5,7 @@ import StylesGuide from './StylesGuide'
 import AssetsGuide from "./AssetsGuide"
 import ComponentsGuide from "./ComponentsGuide"
 
-// An array of components converted from a map object containing a heading along with its respective component
+// By using a map object, we can link the section name with the component
 const components = Array.from(new Map([
     ['Styles Guide', <StylesGuide />],
     ['Assets Guide', <AssetsGuide />],
