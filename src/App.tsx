@@ -7,6 +7,19 @@ import Footer from './components/Footer';
 import { useBackground } from './context/StateContext';
 import './sass/index.scss';
 
+const Content = React.memo(() => {
+  return (
+    <>
+      <div className="content">
+          <Header />
+          <Main />
+        </div>
+
+      <Footer />
+    </>
+  )
+})
+
 function App() {
   const {
     backgroundURL
@@ -18,12 +31,7 @@ function App() {
 
   return (
     <div className={className} style={{backgroundImage: `url(${backgroundURL})`}}>
-        <div className="content">
-          <Header />
-          <Main />
-        </div>
-
-      <Footer />
+        <Content />
     </div>
   )
 }

@@ -24,20 +24,27 @@ const MenuList: React.FC = () => {
 
                 <li>
                     <span>Change Theme</span>
-
-                    <div className="colors-list">
-                        <div className="color one"></div>
-                        <div className="color two"></div>
-                        <div className="color three"></div>
-                        <div className="color four"></div>
-                    </div>
+                    <ColorsList />
                 </li>
-
-                <li>Hide Interface</li>
             </div>
         </ul>
     )
 }
+
+const ColorsList = React.memo(() => {
+    const counterRef = React.useRef(0)
+
+    const handleClick: React.MouseEventHandler = e => console.log(counterRef.current += 1)
+
+    return (
+        <div className="colors-list">
+            <div className="color one" onClick={handleClick}></div>
+            <div className="color two" onClick={handleClick}></div>
+            <div className="color three" onClick={handleClick}></div>
+            <div className="color four" onClick={handleClick}></div>
+        </div>
+    )
+})
 
 function Header() {
     return (
