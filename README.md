@@ -1,4 +1,4 @@
 # Design System (Work-In-Progress)
 
 ## Overview
-A personal playground that fuels my motivation to iterate over various ideas and try out different ways to find a balanced mix of creativity and innovation.
+A personal playground that's tailored completely to my preferences. It's a collection of various UI components I've built to find unique ways that allows users to interact with elements.
